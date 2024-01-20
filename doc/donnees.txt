@@ -1,0 +1,57 @@
+types: 
+0- étages
+1- plein-pied
+2- jumelé étages
+
+Représentation : one hot encoding (pas de relation ordinale entre les données)
+La même chose que si on avait 3 variables binaires, isÉtage, isPP, isJumeléÉtages
+Donc : 
+1 = [1, 0, 0]
+2 = [0, 1, 0]
+3 = [0, 0, 1]
+
+Année de construction:
+Représentation: Temps depuis la construction
+Normalisation   
+Donc par ex.
+1950 = 74 ans = 1
+2024 = 0 ans = 0
+
+Nombre de chambres
+Normalisation, car la relation est claire et ordinale
+Donc
+2 = 0
+5 = 1
+
+Salles de bain
+Normalisation
+Donc
+1 = 0
+3 = 1
+
+Superficie
+Normalisation, car relation claire et ordinale
+3000 = 0
+10000 = 1
+
+Garage:
+No garage : 0
+Garage : 1
+
+Rénos:
+0 = aucune
+1 = partielles
+2 = totales
+Représentation : one hot encoding 
+(car il y a une relation ordinale, mais elle n'est pas claire, total != 2x partiel)
+Donc :
+Pas de rénovations: [1, 0, 0]
+Rénovations partielles : [0, 1, 0]
+Rénovations totales: [0, 0, 1]
+
+OUTPUT
+Normalisation
+100k = 0
+1M = 1
+
+**Ne pas oublier de refaire le mapping à la fin**

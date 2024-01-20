@@ -1,0 +1,57 @@
+Types:
+0 - Floors
+1 - Bungalow
+2 - Twin Floors
+
+Representation: One-hot encoding (no ordinal relationship between the data)
+The same as having three binary variables: isFloors, isBungalow, isTwinFloors
+So:
+1 = [1, 0, 0]
+2 = [0, 1, 0]
+3 = [0, 0, 1]
+
+Construction Year:
+Representation: Time since construction
+Normalization
+So, for example:
+1950 = 74 years = 1
+2024 = 0 years = 0
+
+Number of Bedrooms:
+Normalization, as the relationship is clear and ordinal
+So:
+2 = 0
+5 = 1
+
+Bathrooms:
+Normalization
+So:
+1 = 0
+3 = 1
+
+Area:
+Normalization, as there is a clear and ordinal relationship
+So:
+3000 = 0
+10000 = 1
+
+Garage:
+No garage: 0
+Garage: 1
+
+Renovations:
+0 = None
+1 = Partial
+2 = Total
+Representation: One-hot encoding (there is an ordinal relationship, but it's not clear, so total != 2x partial)
+So:
+No renovations: [1, 0, 0]
+Partial renovations: [0, 1, 0]
+Total renovations: [0, 0, 1]
+
+Output:
+Normalization
+100k = 0
+1M = 1
+
+**Don't forget to remap at the end**
